@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/forthezorba/joomong.git/static/css/main.5cf99681.chunk.css",
+    "main.js": "/forthezorba/joomong.git/static/js/main.947fb544.chunk.js",
+    "main.js.map": "/forthezorba/joomong.git/static/js/main.947fb544.chunk.js.map",
+    "runtime-main.js": "/forthezorba/joomong.git/static/js/runtime-main.2f754b30.js",
+    "runtime-main.js.map": "/forthezorba/joomong.git/static/js/runtime-main.2f754b30.js.map",
+    "static/css/2.ea4a5e64.chunk.css": "/forthezorba/joomong.git/static/css/2.ea4a5e64.chunk.css",
+    "static/js/2.46e5fc88.chunk.js": "/forthezorba/joomong.git/static/js/2.46e5fc88.chunk.js",
+    "static/js/2.46e5fc88.chunk.js.map": "/forthezorba/joomong.git/static/js/2.46e5fc88.chunk.js.map",
+    "index.html": "/forthezorba/joomong.git/index.html",
+    "precache-manifest.45d17641056a27b8dc2153e6826c5d0d.js": "/forthezorba/joomong.git/precache-manifest.45d17641056a27b8dc2153e6826c5d0d.js",
+    "service-worker.js": "/forthezorba/joomong.git/service-worker.js",
+    "static/css/2.ea4a5e64.chunk.css.map": "/forthezorba/joomong.git/static/css/2.ea4a5e64.chunk.css.map",
+    "static/css/main.5cf99681.chunk.css.map": "/forthezorba/joomong.git/static/css/main.5cf99681.chunk.css.map",
+    "static/js/2.46e5fc88.chunk.js.LICENSE.txt": "/forthezorba/joomong.git/static/js/2.46e5fc88.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2f754b30.js",
+    "static/css/2.ea4a5e64.chunk.css",
+    "static/js/2.46e5fc88.chunk.js",
+    "static/css/main.5cf99681.chunk.css",
+    "static/js/main.947fb544.chunk.js"
+  ]
+}
