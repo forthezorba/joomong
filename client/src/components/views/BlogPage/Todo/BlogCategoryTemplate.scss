@@ -1,0 +1,57 @@
+.BlogCategoryTemplate {
+  // width가 주어진 상태에서 좌우 중앙 정렬
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  //min-height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0.5rem;
+
+  .app-title {
+    cursor: pointer;
+    background: white;
+    color: black;
+    height: 53px;
+    font-size: 1.5rem;
+    align-items: center;
+    padding:1rem 0;
+    text-align: center;
+    display: flex;
+    &:hover {
+      color: #adb5bd;
+    }
+  }
+  .content {
+    width: 70%;
+    background: white;
+  }
+  .add_btn{
+    svg{
+      color: #d0ebff;
+    }
+    color: #6eadff;
+    align-items: center;
+    display: flex;
+    font-size: 1.5rem;
+  }
+  .edit {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #495057;
+    cursor: pointer;
+    &:hover {
+      color: #adb5bd;
+    }
+  }
+
+}
+.isCategoryActive {
+  .add_btn{
+    svg{
+      color: #1864ab;
+    }
+  }
+}
