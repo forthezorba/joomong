@@ -29,7 +29,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -48,5 +50,6 @@
   },
   "devDependencies": {
     "http-proxy-middleware": "^1.0.3"
-  }
+  },
+  "homepage": "https://github.com/forthezorba/joomong.git"
 }
