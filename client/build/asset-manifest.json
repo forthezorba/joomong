@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/ec2-3-34-3-253.ap-northeast-2.compute.amazonaws.com/static/css/main.5cf99681.chunk.css",
+    "main.js": "/ec2-3-34-3-253.ap-northeast-2.compute.amazonaws.com/static/js/main.dce14349.chunk.js",
+    "main.js.map": "/ec2-3-34-3-253.ap-northeast-2.compute.amazonaws.com/static/js/main.dce14349.chunk.js.map",
+    "runtime-main.js": "/ec2-3-34-3-253.ap-northeast-2.compute.amazonaws.com/static/js/runtime-main.0dcd80f3.js",
+    "runtime-main.js.map": "/ec2-3-34-3-253.ap-northeast-2.compute.amazonaws.com/static/js/runtime-main.0dcd80f3.js.map",
+    "static/css/2.ea4a5e64.chunk.css": "/ec2-3-34-3-253.ap-northeast-2.compute.amazonaws.com/static/css/2.ea4a5e64.chunk.css",
+    "static/js/2.5bf15811.chunk.js": "/ec2-3-34-3-253.ap-northeast-2.compute.amazonaws.com/static/js/2.5bf15811.chunk.js",
+    "static/js/2.5bf15811.chunk.js.map": "/ec2-3-34-3-253.ap-northeast-2.compute.amazonaws.com/static/js/2.5bf15811.chunk.js.map",
+    "index.html": "/ec2-3-34-3-253.ap-northeast-2.compute.amazonaws.com/index.html",
+    "precache-manifest.2cac06c3be6db3d80126e7e20fb24cdd.js": "/ec2-3-34-3-253.ap-northeast-2.compute.amazonaws.com/precache-manifest.2cac06c3be6db3d80126e7e20fb24cdd.js",
+    "service-worker.js": "/ec2-3-34-3-253.ap-northeast-2.compute.amazonaws.com/service-worker.js",
+    "static/css/2.ea4a5e64.chunk.css.map": "/ec2-3-34-3-253.ap-northeast-2.compute.amazonaws.com/static/css/2.ea4a5e64.chunk.css.map",
+    "static/css/main.5cf99681.chunk.css.map": "/ec2-3-34-3-253.ap-northeast-2.compute.amazonaws.com/static/css/main.5cf99681.chunk.css.map",
+    "static/js/2.5bf15811.chunk.js.LICENSE.txt": "/ec2-3-34-3-253.ap-northeast-2.compute.amazonaws.com/static/js/2.5bf15811.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0dcd80f3.js",
+    "static/css/2.ea4a5e64.chunk.css",
+    "static/js/2.5bf15811.chunk.js",
+    "static/css/main.5cf99681.chunk.css",
+    "static/js/main.dce14349.chunk.js"
+  ]
+}
