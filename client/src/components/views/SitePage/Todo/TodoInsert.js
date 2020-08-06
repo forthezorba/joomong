@@ -1,7 +1,6 @@
 import React, { useState, useCallback, useRef } from "react";
 import "./TodoInsert.scss";
 import { MdAdd } from "react-icons/md";
-import cn from "classnames";
 
 const TodoInsert = ({ onInsert, item }) => {
   const name_ref = useRef();

@@ -47,7 +47,7 @@ function SitePage() {
     setCategory(e.target.value);
   };
 
-   //=================================
+  //=================================
   //       site API
   //=================================
 
@@ -121,9 +121,10 @@ function SitePage() {
 
   return (
     <div style={{ width: "80%", margin: "3rem auto" }}>
-        <form className="TodoInsert bigCategory">
+      <div className="bigCategory">
+        <form className="TodoInsert">
           <input
-            placeholder="새로운 카테고리를 입력해주세요( 입력 후 하나 이상 저장해야 카테고리가 저장됩니다 ) "
+            placeholder="새로운 그룹을 입력해주세요( 입력 후 하나 이상 저장해야 그룹이 저장됩니다 ) "
             value={Category}
             name="name"
             onChange={onChange}
@@ -132,6 +133,7 @@ function SitePage() {
             <MdAdd />
           </button>
         </form>
+      </div>
 
       {renderTodoCategory}
     </div>

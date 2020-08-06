@@ -6,6 +6,7 @@ function LandingPage() {
         <>
             <div className="app">
                 <FaCode style={{ fontSize: '4rem' }} /><br />
+                <img src="/src/img/linkCapture.jpg"/>
                 <span style={{ fontSize: '2rem' }}>Let's Start Blog!</span>
             </div>
             <div style={{ float: 'right' }}></div>

@@ -1,20 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, {  useState } from "react";
 import axios from "axios";
-import { Card, Icon, Avatar, Col, Typography, Row, message } from "antd";
-import { AiOutlinePlusSquare } from "react-icons/ai";
-import AskRemoveModal from "../AskRemoveModal";
+import { Card,  Typography } from "antd";
 import BlogCategoryContainer from "../Containers/BlogCategoryContainer";
-import {
-  get_categories,
-  edit_category,
-  delete_category,
-  create_category,
-} from "../../../../api/blogAPI";
 import WriteActionContainer from "../Containers/WriteActionContainer";
 import BlogPostContainer from "../Containers/BlogPostContainer";
-const { Title } = Typography;
-const { Meta } = Card;
 
 function BlogPage(props) {
   //const user = useSelector((state) => state.user);
@@ -44,12 +33,6 @@ function BlogPage(props) {
         }
       });
   };
-
-  //=================================
-  //       모달
-  //=================================
-
-  
 
   return (
     <div style={{ width: "85%", margin: "2rem auto" }}>

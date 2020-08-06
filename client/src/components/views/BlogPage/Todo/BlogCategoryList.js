@@ -20,7 +20,7 @@ const BlogCategoryList = ({onItemClick, item, onEditBtnClick, selected_item, sel
             selected_item={selected_item}
           />
         ))}
-    <Col lg={3} md={6} xs={12} style={{padding: '1rem'}}>
+    <Col lg={3} md={6} xs={12} style={{padding: '.5rem'}}>
       <BlogCategoryInsert  item={item} onInsert={onInsert}/>
     </Col>
     </>

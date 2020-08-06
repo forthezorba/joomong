@@ -41,10 +41,12 @@ app.use('/api/site', require('./routes/site'));
 //https://stackoverflow.com/questions/48914987/send-image-path-from-node-js-express-server-to-react-client
 app.use('/uploads', express.static('uploads'));
 
+console.log(process.env.NODE_ENV)
+
 // Serve static assets if in production
 if (process.env.NODE_ENV === "production") {
   
-  
+  console.log('pro mode')
   /* app.get('/',function(req,res){
     res.render('client/public/index.html')
   }); */

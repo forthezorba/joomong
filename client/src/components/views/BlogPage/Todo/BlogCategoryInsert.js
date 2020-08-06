@@ -24,8 +24,9 @@ const BlogCategoryInsert = ({ onInsert,  item }) => {
     <div>
     <form className="BlogCategoryInsert" onSubmit={onSubmit}>
       <input
+        className="smallInput"
         ref={name_ref}
-        placeholder={`(${item.category}) 작은 분류를 입력하세요`}
+        placeholder={`(${item.category}) 소그룹`}
         name="name"
         onChange={onChange} 
         value={name}
