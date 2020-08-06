@@ -13,7 +13,7 @@ const BlogCategoryInsertContainer = ({
     <BlogCategoryInsertContainerBlock>
       <form className="BlogCategoryInsert">
         <input
-          placeholder="새로운 그룹을 입력 후 클릭해주세요( 입력 후 하나 이상 저장해야 그룹이 저장됩니다 )"
+          placeholder="새로운 그룹을 입력 후 클릭해주세요( 입력 후 한 개 이상 저장해야 그룹이 저장됩니다 )"
           name="name"
           value={Category}
           onChange={onCategoryChange}

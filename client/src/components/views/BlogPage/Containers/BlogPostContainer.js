@@ -44,9 +44,8 @@ const BlogPostContainer = ({ blogs, getPosts, setBlogs, category_item_id }) => {
                   hoverable
                   style={{ width: 370, marginTop: 16 }}
                   actions={[
+                    <a href={`/blog/post/${blog._id}`}>보기</a>,
                     <Icon type="setting" key="setting" />,
-                    <a href={`/blog/post/${blog._id}`}> <Icon type="ellipsis" key="ellipsis" /></a>,
-                    <Icon type="edit" key="edit" />,
                     <Icon
                       type="delete"
                       key="delete"
