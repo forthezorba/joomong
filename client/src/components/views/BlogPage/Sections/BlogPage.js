@@ -1,6 +1,6 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
-import { Card,  Typography } from "antd";
+import { Card, Typography } from "antd";
 import BlogCategoryContainer from "../Containers/BlogCategoryContainer";
 import WriteActionContainer from "../Containers/WriteActionContainer";
 import BlogPostContainer from "../Containers/BlogPostContainer";
@@ -19,10 +19,7 @@ function BlogPage(props) {
   //       포스트
   //=================================
 
-  
-
   const getPosts = async (item_id) => {
-
     return await axios
       .post("/api/blog/getPosts", { category_item_id: item_id })
       .then((response) => {
@@ -57,12 +54,12 @@ function BlogPage(props) {
         category_item_id={category_item_id}
       />
 
-        <BlogPostContainer
-          blogs={blogs}
-          setBlogs={setBlogs}
-          getPosts={getPosts}
-          category_item_id={category_item_id}
-        />
+      <BlogPostContainer
+        blogs={blogs}
+        setBlogs={setBlogs}
+        getPosts={getPosts}
+        category_item_id={category_item_id}
+      />
     </div>
   );
 }

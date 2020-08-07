@@ -1,11 +1,55 @@
 import React from "react";
-import { FaCode } from "react-icons/fa";
-import { Row, Col } from "antd";
-import Title from "antd/lib/typography/Title";
+import {
+  BarChartOutlined,
+  CloudOutlined,
+  ShopOutlined,
+  TeamOutlined,
+  UserOutlined,
+  UploadOutlined,
+  VideoCameraOutlined,
+  AppstoreOutlined,
+} from "@ant-design/icons";
+import { Layout, Menu, Icon } from "antd";
+import "./LandingPage.css";
+import LandingContainer from "./LandingContainer";
 
-function LandingPage() {
+const { Header, Content, Footer, Sider } = Layout;
+
+function LandingPage(props) {
   return (
-    <>
+    <Layout>
+      <Sider
+        breakpoint="md"
+        collapsedWidth="0"
+        className="left"
+        style={{
+          overflow: "auto",
+          height: "100vh",
+          position: "fixed",
+          left: 0,
+        }}
+      >
+        <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
+          <Menu.Item key="1" icon={<UserOutlined />}>
+            <UserOutlined />
+            new Post
+          </Menu.Item>
+        </Menu>
+      </Sider>
+
+      <Layout className="site-layout" style={{ marginLeft: 200 }}>
+        <Header className="site-layout-background" style={{ padding: 0 }} />
+        <Content style={{ margin: "24px 16px 0", overflow: "initial" }}>
+          <div
+            className="site-layout-background"
+            style={{ padding: 24, textAlign: "center", backGround: "#fff" }}
+          >
+            <LandingContainer props={props} />
+          </div>
+        </Content>
+      </Layout>
+    </Layout>
+    /* <>
       <div className="app">
         <Col lg={18} style={{margin: '2rem',borderBottom: '1px solid gainsboro'}}>
           <Title>Site</Title>
@@ -43,7 +87,7 @@ function LandingPage() {
 
       </div>
       <div style={{ float: "right" }}></div>
-    </>
+    </> */
   );
 }
 

@@ -70,12 +70,29 @@ router.post("/createPost", (req, res) => {
 
 router.post("/getPosts", (req, res) => {
   console.log(req.body)
-  Blog.find({'category_item':req.body.category_item_id})
+  if(req.body.category_item_id){
+    /* 카테고리 눌렀을 때 검색 */
+
+    Blog.find({'category_item':req.body.category_item_id})
+    .populate("writer")
+    .sort({ _id: -1 }) //mongo에서 고유 id는 _id
+    .exec((err, posts) => {
+      if (err) return res.status(400).send(err);
+      res.status(200).json({ success: true, posts });
+    });
+  }else{
+    
+    /* 모든 포스트 검색 */
+    Blog.find({})
+    .sort({ _id: -1 }) //mongo에서 고유 id는 _id
     .populate("writer")
     .exec((err, posts) => {
       if (err) return res.status(400).send(err);
       res.status(200).json({ success: true, posts });
     });
+  }
+  
+  
 });
 
 router.post("/getPost", (req, res) => {

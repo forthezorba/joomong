@@ -19,7 +19,6 @@ const QuillWrapper = styled.div`
 `;
 
 function CreatePost({ history, match }) {
-  console.log(match.params);
   const user = useSelector((state) => state.user);
 
   const [content, setContent] = useState("");

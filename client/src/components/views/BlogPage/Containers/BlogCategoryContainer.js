@@ -105,7 +105,6 @@ const BlogCategoryContainer = ({
 
   const onCancel = () => {
     setModal(false);
-    setcategory_item_id();
   };
 
   const onEditBtnClick = (category_id, category_item_id) => {

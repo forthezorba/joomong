@@ -72,12 +72,16 @@ class ImageBlot extends BlockEmbed {
         imgTag.setAttribute('src', value.src);
         imgTag.setAttribute('alt', value.alt);
         imgTag.setAttribute('width', '100%');
+        console.log(imgTag)
+
         return imgTag;
     }
 
     static value(node) {
+        
         return { src: node.getAttribute('src'), alt: node.getAttribute('alt') };
     }
+
 
 }
 
@@ -408,7 +412,7 @@ class QuillEditor extends React.Component {
     }
 
     modules = {
-        syntax: false,
+        syntax: true,
         toolbar: {
             container: "#toolbar",
             //id ="toorbar"는  그 위에 B I U S I V F P 이거 있는 곳이다. 

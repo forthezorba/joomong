@@ -29,7 +29,7 @@ function PostPage(props) {
                 <Title level={2}>{post.writer.name}`s Post</Title>
                 <br />
                 <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                    <Title level={4}>{post.createdAt}</Title>
+                    <span>{new Date(post.createdAt).toLocaleDateString("ko-KR")}</span>
                 </div>
                 <div dangerouslySetInnerHTML={{ __html: post.content }} />
 
