@@ -15,14 +15,7 @@ const LandingContainerBlock = styled.div`
   a {
     color: black;
   }
-}
-/*   @media (max-width: 767px) {
-    .site-layout .ant-layout {
-      margin-left: 50px !important;
-      color: blue;
-    }
-  } */
-`;
+`
 
 function LandingContainer({ props }) {
   console.log(props);
@@ -49,8 +42,8 @@ function LandingContainer({ props }) {
   const columns = [
     {
       title: "글쓴이",
-      dataIndex: "writer.name",
-      render: (text) => <a>{text}</a>,
+      dataIndex: "writer",
+      render: (writer) => <a href={`/blog/${writer._id}`}>{writer.name}</a>,
     },
     {
       title: "제목",

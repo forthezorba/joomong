@@ -52,47 +52,86 @@ router.post("/uploadfiles", (req, res) => {
 });
 
 router.post("/createPost", (req, res) => {
-  console.log(req.body)
-  let blog = new Blog({
-    title: req.body.title,
-    content: req.body.content,
-    writer: req.body.userID,
-    category : req.body.category,
-    category_item : req.body.category_item,
-  });
+  console.log(req.body);
 
-  blog.save((err, blogInfo) => {
-    if (err) return res.json({ success: false, err });
-    console.log(blogInfo)
-    return res.status(200).json({ success: true, blogInfo });
-  });
+  /* 새 글 작성 */
+  if (!req.body.originalPostId) {
+
+    let blog = new Blog({
+      title: req.body.title,
+      content: req.body.content,
+      writer: req.body.userID,
+      category: req.body.category,
+      category_item: req.body.category_item,
+    });
+  
+    blog.save((err, blogInfo) => {
+      if (err) return res.json({ success: false, err });
+      console.log(blogInfo);
+      return res.status(200).json({ success: true, blogInfo });
+    });
+  }
+
+  /* 기존 글 수정 */
+  if (req.body.originalPostId) {
+    Blog.findOneAndUpdate(
+      { _id: req.body.originalPostId },
+      { title: req.body.title, content: req.body.content },
+      { new: true },
+      (err, category) => {
+        if (err) {
+          console.log(err);
+          return res.status(400).send(err);
+        }
+        console.log(category);
+        res.status(200).json({ success: true, category });
+      }
+    );
+  }
+});
+
+router.post("/post/write", (req, res) => {
+  console.log(req.body);
+
+  if (originalPostId) {
+    Blog.findOneAndUpdate(
+      { _id: req.body.originalPostId },
+      { title: req.body.title, content: req.body.content },
+      { new: true },
+      (err, category) => {
+        if (err) {
+          console.log(err);
+          return res.status(400).send(err);
+        }
+        console.log(category);
+        res.status(200).json({ success: true, category });
+      }
+    );
+  }
 });
 
 router.post("/getPosts", (req, res) => {
-  console.log(req.body)
-  if(req.body.category_item_id){
+  console.log(req.body);
+  if (req.body.category_item_id) {
     /* 카테고리 눌렀을 때 검색 */
 
-    Blog.find({'category_item':req.body.category_item_id})
-    .populate("writer")
-    .sort({ _id: -1 }) //mongo에서 고유 id는 _id
-    .exec((err, posts) => {
-      if (err) return res.status(400).send(err);
-      res.status(200).json({ success: true, posts });
-    });
-  }else{
-    
+    Blog.find({ category_item: req.body.category_item_id })
+      .populate("writer")
+      .sort({ _id: -1 }) //mongo에서 고유 id는 _id
+      .exec((err, posts) => {
+        if (err) return res.status(400).send(err);
+        res.status(200).json({ success: true, posts });
+      });
+  } else {
     /* 모든 포스트 검색 */
     Blog.find({})
-    .sort({ _id: -1 }) //mongo에서 고유 id는 _id
-    .populate("writer")
-    .exec((err, posts) => {
-      if (err) return res.status(400).send(err);
-      res.status(200).json({ success: true, posts });
-    });
+      .sort({ _id: -1 }) //mongo에서 고유 id는 _id
+      .populate("writer")
+      .exec((err, posts) => {
+        if (err) return res.status(400).send(err);
+        res.status(200).json({ success: true, posts });
+      });
   }
-  
-  
 });
 
 router.post("/getPost", (req, res) => {
@@ -125,7 +164,7 @@ router.get("/getBlogs", (req, res) => {
 });
 
 router.post("/getCategories", (req, res) => {
-  //console.log(req.body.userId)
+  console.log(req.body);
   BlogCategory.find({ writer: req.body.userId })
     .populate("writer")
     .exec((err, cates) => {
@@ -156,7 +195,9 @@ router.post("/deleteCategory", (req, res) => {
     BlogCategory.findByIdAndDelete(
       { _id: req.body.category_id },
       (err, category) => {
-        if (err) {return res.status(400).send(err);}
+        if (err) {
+          return res.status(400).send(err);
+        }
         res.status(200).json({ success: true, category });
       }
     );
@@ -169,7 +210,7 @@ router.post("/editCategory", (req, res) => {
     /* 소분류 카테고리 수정 */
     BlogCategory.findOneAndUpdate(
       { sub_category: { $elemMatch: { _id: req.body.category_item_id } } },
-      { $set: { 'sub_category.$.name': req.body.edited_category_item }},
+      { $set: { "sub_category.$.name": req.body.edited_category_item } },
       { new: true },
       (err, category) => {
         if (err) {
@@ -186,7 +227,9 @@ router.post("/editCategory", (req, res) => {
       { _id: req.body.category_id },
       { category: req.body.edited_category },
       (err, category) => {
-        if (err) {return res.status(400).send(err);}
+        if (err) {
+          return res.status(400).send(err);
+        }
         res.status(200).json({ success: true, category });
       }
     );

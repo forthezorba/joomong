@@ -12,6 +12,7 @@ import CreatePost from './views/BlogPage/Sections/CreatePost';
 import PostPage from './views/BlogPage/Sections/PostPage';
 import SitePage from './views/SitePage/SitePage';
 import MyBlogPage from './views/MyBlogPage/MyBlogPage';
+import WritePage from './views/BlogPage/Sections/WritePage';
 
 //null   Anyone Can go inside
 //true   only logged in user can go inside
@@ -27,7 +28,9 @@ function App() {
           <Route exact path="/login" component={Auth(LoginPage, false)} />
           <Route exact path="/register" component={Auth(RegisterPage, false)} />
           <Route exact path="/blog" component={Auth(BlogPage, true)} />
+          <Route exact path="/blog/:writerId" component={Auth(BlogPage, null)} />
           <Route exact path="/blog/createPost/:category/:category_item" component={Auth(CreatePost, true)} />
+          <Route exact path="/blog/post/write" component={Auth(WritePage, true)} />
           <Route exact path="/blog/post/:postId" component={Auth(PostPage, null)} />
           <Route exact path="/site" component={Auth(SitePage, true)} />
           <Route exact path="/myblog" component={Auth(MyBlogPage, true)} />

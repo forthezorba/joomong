@@ -26,18 +26,30 @@ const BlogCategoryContainer = ({
   setcategory_item_id
 }) => {
   const user = props.user;
+  const { writerId } = props.match.params;
+
   const [modal, setModal] = useState(false);
   const [Category, setCategory] = useState("");
   const [List, setList] = useState([]);
   const [showList, setshowList] = useState(false);
 
+
   useEffect(() => {
-    if (user.userData) {
+    if (user.userData && writerId) {
+      console.log('visitor')
+      fetch_categories(writerId);
+    }
+    if(user.userData && !writerId){
       fetch_categories();
     }
-  }, [user.userData]);
+  }, [user.userData,writerId]);
 
-  const fetch_categories = async () => {
+  const fetch_categories = async (writerId) => {
+    if(writerId){
+      const list = await get_categories({ userId: writerId });
+      setList(list);
+      return
+    }
     const list = await get_categories({ userId: user.userData._id });
     setList(list);
   };

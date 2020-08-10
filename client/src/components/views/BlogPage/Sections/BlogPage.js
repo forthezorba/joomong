@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Card, Typography } from "antd";
 import BlogCategoryContainer from "../Containers/BlogCategoryContainer";
@@ -18,6 +18,13 @@ function BlogPage(props) {
   //=================================
   //       포스트
   //=================================
+  /*   useEffect(() => {
+    async function dafultSetting(){
+      const list = await getPosts()
+      setcategory_id(list[0]._id)
+    }
+    dafultSetting()
+  }, []) */
 
   const getPosts = async (item_id) => {
     return await axios
@@ -54,12 +61,15 @@ function BlogPage(props) {
         category_item_id={category_item_id}
       />
 
-      <BlogPostContainer
-        blogs={blogs}
-        setBlogs={setBlogs}
-        getPosts={getPosts}
-        category_item_id={category_item_id}
-      />
+      {user && (
+        <BlogPostContainer
+          user={user}
+          blogs={blogs}
+          setBlogs={setBlogs}
+          getPosts={getPosts}
+          category_item_id={category_item_id}
+        />
+      )}
     </div>
   );
 }
